@@ -5,8 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock-Paper-Scissors Game</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+  <h1>ROCK PAPER SCISSORS</h1>
+  <div id='gameboard'>
+    <h2 id="h02">In a round of 5, compete with machines. </h2>
+    <p id="para">Pick a word: Rock,  Paper,  Scissors</p>
+    <div>
+      <button id='rock'>Rock</button>
+      <button id="paper">Paper</button>
+      <button id="scissors">Scissors</button>
+    </div>
+
+    <div id='scoreboard'>
+      <div>
+        <h3>Computer Score</h3>
+        <p id='comp'></p>
+      </div>
+      <div>
+        <h3>Player Score</h3>
+        <p id="player"></p>
+      </div>
+    </div>
+    <p id='result'></p>
+    
+    <div>
+      <button id="refresh">Play Again</button>
+    </div>
+  </div>
+  <footer>
+    Orbie&copy; 2021
+  </footer>
 <script src="index.js"></script>
 </body>
 </html>
