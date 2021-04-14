@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+$backgroundColor: #c89b02;
+$display: flex;
+$alignItems: center;
+$justifyContent: center;
+$color: #c89b02; 
+$fontweight: bold;
+
+$fontSize: (
+  'normal': 16px,
+  'medium': 18px,
+  'large': 20px,
+  'xl-large': 25px
+);
+
+$margin: (
+  'top': 20px, 
+  'bottom': 20px
+);   
+
+body {
+  background-color: $backgroundColor;
+  text-align: center;
+
+  h1 {
+    color: white;
+    margin-bottom: map-get($margin, 'bottom');
+  }
+  
+  #gameboard {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    top: 4em;   
+    
+    
+    #h02 {
+      font-size: map-get($fontSize, 'xl-large' );
+    }
+
+    #para {
+      margin-bottom: map-get($margin, 'bottom');
+      font-size: map-get($fontSize, 'large' );
+      padding: 10px;
+    }
+  
+    button {
+      padding: 15px;
+      width: 150px;
+      color: $color;
+      border: none;
+      border-radius: 60px;
+      margin-top: 5px;
+      cursor: pointer;
+      font-weight: $fontweight;
+      animation: glowing 1300ms infinite;
+
+      
+      @keyframes glowing {
+        0% {
+          background-color: white;
+          box-shadow: 0 0 5px white;
+        }
+        50% {
+          background-color: white;
+          box-shadow: 0 0 20px white;
+        }
+        100% {
+          background-color: white;
+          box-shadow: 0 0 5px white;
+        }
+      }
+    }
+    
+    #scoreboard {
+      display: $display;
+      justify-content: $justifyContent;
+      align-items: $alignItems; 
+      margin-top: map-get($margin, 'top');
+    
+      div {
+        border: 1px solid black;
+        margin-right: 20px;
+        padding: 10px;
+    
+        h3 {
+          margin-bottom: 5px;
+        }
+      }
+  
+      
+    }  
+    #result {
+      font-size: map-get($fontSize , 'large');
+      margin-top: map-get($margin , 'top' );
+      font-weight: $fontweight;
+    }
+  }
+
+  footer {
+    position: relative;
+    top: 19em;
+  }  
+}
+
+/* Mobile View */
+@media only screen and (max-device-width: 480px) {
+  body {
+    h1 {
+      font-size: map-get($fontSize, 'large');
+    }
+    
+    #gameboard {
+      #h02 {
+        font-size: map-get($fontSize, 'large' );
+      }
+  
+      #para {
+        font-size: map-get($fontSize, 'medium' );
+      }
+    }
+
+    footer {
+      top: 9em;
+    }
+  } 
+}
+
