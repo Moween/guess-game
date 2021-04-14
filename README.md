@@ -1,6 +1,8 @@
 # Rock Paper Scissors Game.
 
-## The game is a guess game##
+## The game is a guess game
+
+
 The game involves two players:
 - Computer
 - Player
