@@ -40,6 +40,7 @@ body #gameboard button {
   margin-top: 5px;
   cursor: pointer;
   font-weight: bold;
+  outline: none;
   -webkit-animation: glowing 1300ms infinite;
           animation: glowing 1300ms infinite;
 }
