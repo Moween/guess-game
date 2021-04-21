@@ -55,8 +55,7 @@ function playRound(e) {
       computerScore += 10;
     }
     
-  }
-  if(playerSelection === computerSelection) {
+  } else { // You can use an else statement here since there are only two possible outcomes you are checking.
     computerScore += 10;
     playerScore += 10;
   }
@@ -66,25 +65,22 @@ function playRound(e) {
 
 
 let resultbtn = document.createElement('button');
+
 function winner() {
+  let resultBtnValue;
+  
   if(playerScore > computerScore) {
-    document.getElementById('player').textContent = `${playerScore} points!`;
-    document.getElementById('comp').textContent = `${computerScore} points!`;
-    result.appendChild(resultbtn);
-    return resultbtn.innerHTML = `You win &#128514;!`;
-  }else if(playerScore === computerScore){
-    document.getElementById('comp').textContent = `${computerScore} points!`;
-    document.getElementById('player').textContent = `${playerScore} points!`;
-    result.appendChild(resultbtn);
-    return resultbtn.innerHTML = "It's a tie!";
+    resultBtnValue = `You win &#128514;!`;
+  }else if(playerScore < computerScore){
+    resultBtnValue = `You lose &#128546;!`;
   }else {
-    document.getElementById('comp').textContent = `${computerScore} points!`;
-    document.getElementById('player').textContent = `${playerScore} points!`;
-    result.appendChild(resultbtn);
-    return resultbtn.innerHTML = `You lose &#128546;!`;
-    
+    resultBtnValue = "It's a tie!";
   }
   
+  document.getElementById('comp').textContent = `${computerScore} points!`;
+  document.getElementById('player').textContent = `${playerScore} points!`;
+  result.appendChild(resultbtn);
+  resultbtn.innerHTML = resultBtnValue;
 }
 
 
