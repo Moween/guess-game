@@ -9,11 +9,11 @@ const refreshBtn = document.getElementById('refresh')
 const myArray = ["rock", "paper", "scissors"];
 
 //result array
-const winningArray = [
-  ['rock', 'scissors'],
-  ['scissors', 'paper'],
-  ['paper', 'rock']
-]
+const winningWeapons = {
+  rock: 'scissors',
+  paper: 'rock',
+  scissors: 'paper'
+}
 
 //variable to increment scores 
 let playerScore = 0;
@@ -36,17 +36,15 @@ function playRound(e) {
   
   //Computer Plays
   let computerSelection = computerPlay();
-  console.log("Computer Selection:", computerSelection);
 
   //Player Plays
   playerSelection = e.target.id;
-  console.log(playerSelection);  
   
   //Checking for winner
   if(playerSelection !== computerSelection) {
     let playerWin = false;
-    for (let i = 0; i < winningArray.length; i++) {
-      if(JSON.stringify([playerSelection, computerSelection]) === JSON.stringify(winningArray[i])) {
+    for (const weapon in winningWeapons) {
+      if(playerSelection === weapon && computerSelection === winningWeapons[weapon]) {
         playerScore += 10;
         playerWin = true;
         break;
