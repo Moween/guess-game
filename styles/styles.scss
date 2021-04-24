@@ -82,6 +82,7 @@ body {
       display: $display;
       justify-content: $justifyContent;
       align-items: $alignItems; 
+      flex-wrap: wrap;
       margin-top: map-get($margin, 'top');
     
       div {
